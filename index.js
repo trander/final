@@ -94,7 +94,6 @@ app.post('/editbio', function(req,res) {
     })
 })
 
-
 app.get('/user',function(req,res) {
     res.json({
         id: req.session.user.id,
@@ -105,7 +104,8 @@ app.get('/user',function(req,res) {
     });
 })
 
-app.post('searach', function(req,res) {
+app.post('/search', function(req,res) {
+    
     db.search(req.body.search)
 })
 

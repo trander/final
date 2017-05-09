@@ -19,7 +19,6 @@ export class Bio extends React.Component {
 
     handleBioChange(e) {
         this.editBio = e.target.value;
-
     }
 
     save() {

@@ -11,6 +11,7 @@ export class App extends React.Component {
         super(props);
         this.state = {};
         this.editBio = this.editBio.bind(this);
+
     }
 
     componentDidMount() {
@@ -34,6 +35,16 @@ export class App extends React.Component {
             })
         });
     }
+
+    // search(searched) {
+    //     axios.post('/search', {
+    //         searched: searched
+    //     }).then ( (resp) => {
+    //         this.setState({
+    //             searched: searched
+    //         })
+    //     })
+    // }
 
     render() {
         const children = React.cloneElement(this.props.children, {

@@ -4,6 +4,7 @@ import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 're
 import { Welcome, Logo, Login, Register } from './welcome';
 import { App } from './app';
 import { Profile } from './profile';
+import {Search} from './search';
 
 let router = (
     <Router history={hashHistory}>
@@ -19,7 +20,8 @@ if (location.pathname != '/welcome') {
     router = (
         <Router history={browserHistory}>
             <Route path="/" component={App}>
-            <IndexRoute component={Profile} />
+                <IndexRoute component={Profile} />
+                <Route path="search" component={Search} />
             </Route>
         </Router>
     )
