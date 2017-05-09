@@ -6,15 +6,26 @@ export class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
-        this.onInput = this.onInput.bind(this);
-        
-    }
 
+
+        this.onInput = this.onInput.bind(this);
+    }
 
     onInput(e) {
         var obj = {};
         obj[e.target.id] = e.target.value;
         this.setState(obj);
+    }
+
+    search(){
+        console.log("this is clicked!!!!!")
+        // axios.post('/search', {
+        //     searched: this.state.searched;
+        // }).then( (resp) => {
+        //
+        //
+        //
+        // })
     }
 
     render() {
