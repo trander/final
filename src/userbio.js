@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ProfilePic } from './profilePic'
 
 export class Bio extends React.Component {
     constructor(props) {

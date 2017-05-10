@@ -3,14 +3,10 @@ import ReactDOM from 'react-dom';
 import { Link } from 'react-router';
 
 export class ProfilePic extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div>
-                <Link to="search"> <img src="/img/defaultProfilePic.png" className="profilePic" /> </Link>
+                <Link to="editbio"> <img src="/img/defaultProfilePic.png" className="profilePic" /> </Link>
             </div>
         );
     }

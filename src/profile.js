@@ -7,7 +7,7 @@ export class Profile extends React.Component {
     constructor(props) {
         super(props);
         this.openModal = this.openModal.bind(this);
-        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
 
     openModal() {

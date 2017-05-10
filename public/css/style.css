@@ -34,7 +34,7 @@
     float:left;
 }
 
-.profilePic {
+.profilePic, .listPic {
     border: solid 1px black;
     height: 80px;
     margin-top: 10px;

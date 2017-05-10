@@ -6,8 +6,6 @@ export class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
-
-
         this.onInput = this.onInput.bind(this);
     }
 
@@ -17,15 +15,10 @@ export class Search extends React.Component {
         this.setState(obj);
     }
 
-    search(){
-        console.log("this is clicked!!!!!")
-        // axios.post('/search', {
-        //     searched: this.state.searched;
-        // }).then( (resp) => {
-        //
-        //
-        //
-        // })
+    search() {
+        axios.post('/search', function(){
+            console.log("search function");
+        })
     }
 
     render() {

@@ -62,11 +62,13 @@ app.post('/login', function(req,res) {
     var password = req.body.password;
 
     db.login(email, password).then(function(data) {
+        console.log(data);
+
         req.session.user = {
-            id: data[0].id,
-            first: data[0].first,
-            last : data[0].last,
-            image : data[0].image
+            id: data.id,
+            first: data.first,
+            last : data.last,
+            image : data.image
         };
         res.json({
             success: true
@@ -105,11 +107,12 @@ app.get('/user',function(req,res) {
 })
 
 app.post('/search', function(req,res) {
-    
     db.search(req.body.search)
 })
 
-
+app.post('/list', function(req,res) {
+    console.log("/list");
+})
 
 app.listen(8000, function() {
     console.log("I'm listening.")

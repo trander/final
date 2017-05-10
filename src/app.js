@@ -4,14 +4,15 @@ import axios from 'axios';
 import { Logo } from './logo.js';
 import { ProfilePic } from './profilePic.js';
 import { Search } from './search.js';
-import { List } from './list.js';
+import { ListPic } from './listPic.js';
+
+console.log('PROFILE PIC', ProfilePic);
 
 export class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
         this.editBio = this.editBio.bind(this);
-
     }
 
     componentDidMount() {
@@ -35,6 +36,8 @@ export class App extends React.Component {
             })
         });
     }
+
+
 
     // search(searched) {
     //     axios.post('/search', {
@@ -61,7 +64,7 @@ export class App extends React.Component {
                 <div className="header">
                     <Logo />
                     <Search />
-                    <List />
+                    <ListPic />
                     <ProfilePic />
                 </div>
                 <div className="body">
