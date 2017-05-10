@@ -26,18 +26,23 @@ module.exports.register = function(first, last, email, password) {
 };
 
 module.exports.login = function(email, password) {
-    var query = 'SELECT * FROM users WHERE email = `$1`';
-    return db.query(query, {email}).then(function(data) {
-        return bcrypt.checkPassword(password, data.rows[0].password).then(function(doesMatch) {
-            if(doesMatch) {
-                return data;
-            } else {
-                throw new Error;
-            }
-        });
-    })
-};
+    return new Promise(function(resolve, reject) {
+        var query = 'SELECT * FROM users WHERE email = $1';
+        return db.query(query, [email]).then(function(data) {
+            var a = data.rows[0];
 
+            return bcrypt.checkPassword(password, a.password, function(err, doesMatch) {
+                if(doesMatch) {
+                    console.log("doesMatch",doesMatch);
+                    resolve(a);
+                } else {
+                    console.log("There was an error!!!!!!!!!",err);
+                    // throw new Error;
+                }
+            });
+        })
+    })
+}
 
 module.exports.profile = function(img) {
     return new Promise(function (resolve, reject) {
