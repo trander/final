@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router';
 import axios from 'axios';
 import { Logo } from './logo.js';
 import { ProfilePic } from './profilePic.js';
@@ -12,7 +13,12 @@ export class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+        this.list = this.list.bind(this);
         this.editBio = this.editBio.bind(this);
+    }
+
+    componentWillMount(){
+        
     }
 
     componentDidMount() {
@@ -22,7 +28,8 @@ export class App extends React.Component {
                 first: resp.data.first,
                 last: resp.data.last,
                 image: resp.data.image,
-                bio: resp.data.bio
+                bio: resp.data.bio,
+                list: resp.data.list
             });
         })
     }
@@ -57,18 +64,6 @@ export class App extends React.Component {
         });
     }
 
-
-
-    // search(searched) {
-    //     axios.post('/search', {
-    //         searched: searched
-    //     }).then ( (resp) => {
-    //         this.setState({
-    //             searched: searched
-    //         })
-    //     })
-    // }
-
     render() {
         const children = React.cloneElement(this.props.children, {
             id: this.state.id,
@@ -76,19 +71,21 @@ export class App extends React.Component {
             last: this.state.last,
             image: this.state.image,
             bio: this.state.bio,
-            editBio: this.editBio
+            editBio: this.editBio,
+            list: this.list
         })
 
         let elem = (
             <div>
                 <div className="header">
-                    <Logo />
+                    <Link to="/"><Logo /></Link>
                     <Search />
                     <ListPic />
                     <ProfilePic />
                 </div>
                 <div className="body">
-                    {children}
+                <hr/>
+                    {this.props.children}
                 </div>
             </div>
         );

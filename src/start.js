@@ -4,7 +4,7 @@ import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 're
 import { Welcome, Logo, Login, Register } from './welcome';
 import { App } from './app';
 import { Main } from './main';
-import { SearchedVoca } from './SearchedVoca';
+import { SearchedVoca } from './searchedVoca';
 import { List } from './list';
 import { Profile } from './profile';
 import { Bio } from './userbio';

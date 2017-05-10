@@ -9,7 +9,9 @@ export class List extends React.Component {
 
     render() {
         return(
-            "List of daily vocabulary"
+            <div>
+                "List of daily vocabulary"
+            </div>
         );
     }
 }

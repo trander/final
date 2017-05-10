@@ -119,7 +119,8 @@ app.get('/user',function(req,res) {
 
 
 app.post('/list', function(req,res) {
-    console.log("/list");
+    
+
 })
 
 app.listen(8000, function() {

@@ -14,7 +14,7 @@ CREATE TABLE users(
 
 CREATE TABLE user00_20170512(
     time timestamp,
-    userid VARCHAR(255) not null,
+    userid VARCHAR(255) REFERENCES users (id) not null,
     id SERIAL primary key,
     voca VARCHAR(255),
     meaning TEXT,

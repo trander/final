@@ -5,13 +5,12 @@ export class SearchedVoca extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
-        
+
     }
     render() {
         let result = (
             <div>
-
-
+                "Glosbe"
             </div>
         );
         return result;

@@ -73,6 +73,7 @@ module.exports.editBio = function(bio, id) {
     });
 };
 
+
 module.exports.profile = function(img) {
     return new Promise(function (resolve, reject) {
         var query = 'INSERT INTO users (image) VALUES ($1) returning id';
