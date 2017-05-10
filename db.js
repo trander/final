@@ -44,10 +44,24 @@ module.exports.login = function(email, password) {
     })
 }
 
-module.exports.profile = function(img) {
+module.exports.search = function(userid, voca) {
+    var query = 'INSERT INTO user00_20170512 (userid, voca) VALUES ($1, $2)';
+    var qParams = [userid, voca];
+
+    db.query(query, qParams, function(err,results) {
+        if(!err) {
+            return results.rows;
+        } else {
+            return err;
+        }
+    });
+}
+
+module.exports.editBio = function(bio, id) {
     return new Promise(function (resolve, reject) {
-        var query = 'INSERT INTO users (image) VALUES ($1) returning id';
-        var qParams = [image];
+        var query = 'UPDATE users SET bio=$1 WHERE id=$2';
+        var qParams = [bio, id];
+        console.log(bio, id);
 
         db.query(query, qParams, function(err, results) {
             if(!err) {
@@ -59,11 +73,10 @@ module.exports.profile = function(img) {
     });
 };
 
-module.exports.editBio = function(bio, id) {
+module.exports.profile = function(img) {
     return new Promise(function (resolve, reject) {
-        var query = 'UPDATE users SET bio=$1 WHERE id=$2';
-        var qParams = [bio, id];
-        console.log(bio, id);
+        var query = 'INSERT INTO users (image) VALUES ($1) returning id';
+        var qParams = [image];
 
         db.query(query, qParams, function(err, results) {
             if(!err) {

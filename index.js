@@ -72,7 +72,6 @@ app.post('/login', function(req,res) {
             success: true
         });
     }).catch(function(err) {
-        console.log(err);
         res.json({
             success: false
         })
@@ -80,8 +79,19 @@ app.post('/login', function(req,res) {
 });
 
 app.post('/search', function(req,res) {
-    console.log("/search");
-    // db.search(req.body.search);
+    var voca = req.body.voca;
+    var userid = req.session.user.id;
+
+    db.search(userid, voca).then(function(data) {
+        req.session.user.voca = voca;
+        res.json({
+            success: true
+        });
+    }).catch(function(error){
+        res.json({
+            success: false
+        });
+    })
 })
 
 app.post('/editbio', function(req,res) {
