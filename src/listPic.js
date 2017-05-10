@@ -6,7 +6,7 @@ export class ListPic extends React.Component {
     render() {
         let elem = (
             <div className="listBox">
-                <img src="/img/1.PNG" className="listPic"/>
+                <Link to="list"><img src="/img/list.jpg" className="listPic"/></Link>
             </div>
         );
 

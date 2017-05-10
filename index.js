@@ -62,8 +62,6 @@ app.post('/login', function(req,res) {
     var password = req.body.password;
 
     db.login(email, password).then(function(data) {
-        console.log(data);
-
         req.session.user = {
             id: data.id,
             first: data.first,
@@ -81,6 +79,10 @@ app.post('/login', function(req,res) {
     });
 });
 
+app.post('/search', function(req,res) {
+    console.log("/search");
+    // db.search(req.body.search);
+})
 
 app.post('/editbio', function(req,res) {
     db.editBio(req.body.bio, req.session.user.id).then(function(data) {
@@ -88,7 +90,6 @@ app.post('/editbio', function(req,res) {
         res.json({
             success: true
         });
-
     }).catch(function(error){
         res.json({
             success: false
@@ -106,9 +107,6 @@ app.get('/user',function(req,res) {
     });
 })
 
-app.post('/search', function(req,res) {
-    db.search(req.body.search)
-})
 
 app.post('/list', function(req,res) {
     console.log("/list");

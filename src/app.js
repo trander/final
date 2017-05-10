@@ -27,6 +27,16 @@ export class App extends React.Component {
         })
     }
 
+    list(list){
+        axios.post('/list', {
+            list: list
+        }).then( (resp) => {
+            this.setState({
+                list: list
+            })
+        });
+    }
+
     editBio(bio) {
         axios.post('/editbio', {
             bio: bio

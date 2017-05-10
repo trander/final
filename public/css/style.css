@@ -26,7 +26,6 @@
 }
 
 .listBox {
-    border: solid 1px black;
     width: 80px;
     height: 80px;
     margin-top: 10px;
@@ -34,13 +33,17 @@
     float:left;
 }
 
-.profilePic, .listPic {
-    border: solid 1px black;
+.listPic {
+    height: 80px;
+    width : 80px;
+    border-radius: 15px;
+}
+
+.profilePic {
     height: 80px;
     margin-top: 10px;
     margin-left: 10px;
     float: left;
-    width : 80px;
 }
 
 .body {
@@ -48,9 +51,10 @@
 }
 
 .userBio {
-border: solid 1px black;
+    border: solid 1px black;
     width: 200px;
     height: 150px;
+    text-align: center;
 }
 
 .userBioBox {
