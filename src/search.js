@@ -24,7 +24,7 @@ export class Search extends React.Component {
     render() {
         let elem = (
             <div className="searchBox">
-                <input onChange={this.onInput} id="search" />
+                <input onChange={this.onInput} id="voca" />
                 <button onClick={this.search}> search </button>
             </div>
         );

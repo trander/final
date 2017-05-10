@@ -2,9 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 export class SearchedVoca extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+        
+    }
     render() {
-        return (
-            "meaning of the vocabulary"
+        let result = (
+            <div>
+
+
+            </div>
         );
+        return result;
     }
 }
