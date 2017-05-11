@@ -9,9 +9,9 @@ const translateClient = Translate({
 });
 
 // The text to translate
-const text = 'Hello, world!';
+const text = 'Hallo';
 // The target language
-const target = 'ru';
+const target = 'en';
 
 // Translates some text into Russian
 translateClient.translate(text, target)

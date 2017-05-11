@@ -84,8 +84,8 @@ app.post('/search', function(req,res) {
     var userid = req.session.user.id;
 
     db.search(userid, voca).then(function(data) {
-        req.session.user.voca = voca;
-        
+
+
         res.json({
             success: true
         });

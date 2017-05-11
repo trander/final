@@ -62,13 +62,8 @@ export class App extends React.Component {
     }
 
     search(voca) {
-        axios.post('/search', {
-            voca: voca
-        }).then( (resp) => {
-            this.setState({
-                voca:voca
-            })
-        });
+
+        
     }
 
     render() {
