@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router';
 import axios from 'axios';
+import Request from 'superagent';
 import { Logo } from './logo.js';
 import { ProfilePic } from './profilePic.js';
 import { Search } from './search.js';
@@ -18,7 +19,13 @@ export class App extends React.Component {
     }
 
     componentWillMount(){
-        
+        var url="https://od-api.oxforddictionaries.com/api/v1";
+        Request.get(url).then( (response) => {
+            this.setState({
+                deu: response.body.voca
+
+            });
+        });
     }
 
     componentDidMount() {

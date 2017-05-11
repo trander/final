@@ -1,8 +1,7 @@
-// Imports the Google Cloud client library
 const Translate = require('@google-cloud/translate');
 
 // Your Google Cloud Platform project ID
-const projectId = 'skillful-garden-149102';
+const projectId = 'spicedfinal';
 
 // Instantiates a client
 const translateClient = Translate({
@@ -25,3 +24,4 @@ translateClient.translate(text, target)
   .catch((err) => {
     console.error('ERROR:', err);
   });
+// [END translate_quickstart]

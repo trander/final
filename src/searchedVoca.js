@@ -10,7 +10,7 @@ export class SearchedVoca extends React.Component {
     render() {
         let result = (
             <div>
-                "Glosbe"
+                "Meaning"
             </div>
         );
         return result;

@@ -5,6 +5,7 @@ const googleTranslate = require('google-translate')("AIzaSyAiEWinfXNu3fTgKlZfW3y
 const db = require('./db');
 const app = express();
 
+
 if (process.env.NODE_ENV != 'production') {
     app.use(require('./build'));
 }
@@ -84,6 +85,7 @@ app.post('/search', function(req,res) {
 
     db.search(userid, voca).then(function(data) {
         req.session.user.voca = voca;
+        
         res.json({
             success: true
         });
@@ -119,7 +121,7 @@ app.get('/user',function(req,res) {
 
 
 app.post('/list', function(req,res) {
-    
+
 
 })
 
