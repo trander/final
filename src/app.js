@@ -61,10 +61,6 @@ export class App extends React.Component {
         });
     }
 
-    search(voca) {
-
-        
-    }
 
     render() {
         const children = React.cloneElement(this.props.children, {
