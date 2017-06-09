@@ -1,34 +1,59 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';
 
 export class Search extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
-        this.onInput = this.onInput.bind(this);
+        this.state = {
+            search: ''
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.searchButton = this.searchButton.bind(this);
     }
 
-    onInput(e) {
-        var obj = {};
-        obj[e.target.id] = e.target.value;
-        this.setState(obj);
-    }
-
-    search() {
-        axios.post('/search', function(){
-            console.log("search function");
+    handleChange(event) {
+        console.log('handleChange: '+event.target.value);
+        let search = this.state.search;
+        this.setState({
+            search:search
         })
     }
 
+    searchButton() {
+
+    }
+
+
     render() {
         let elem = (
-            <div className="searchBox">
-                <input onChange={this.onInput} id="voca" />
-                <button onClick={this.search}> search </button>
+            <div>
+                <input onChange={this.handleChange} type="text" placeholer="search"></input>
+                <button onClick={this.searchButton}>Go</button>
             </div>
         );
 
         return elem;
     }
+
+    // handleChange(e) {
+    //     var obj = {};
+    //     obj[e.target.voca] = e.target.value;
+    //     this.setState(obj);
+    // }
+    //
+    // search(e) {
+    //     console.log("Search!! " + this.state.value);
+    //     e.preventDefault();
+    // }
+    //
+
+    // let elem = (
+    //     <div className="searchBox">
+    //         <input onChange={this.handleChange} type="text" id="searchedV" placeholder="Search" className="voca" value={this.state.voca}/>
+    //         <button onClick={this.search} className="src_btn"> Go </button>
+    //     </div>
+    // );
+
+
+
 }
